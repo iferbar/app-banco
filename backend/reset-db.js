@@ -8,6 +8,7 @@ async function resetDatabase() {
     try {
         connection = await mysql.createConnection({
             host: process.env.DB_HOST,
+            port: process.env.DB_PORT || 3306,
             user: process.env.DB_USER,
             password: process.env.DB_PASSWORD,
             database: process.env.DB_NAME,
@@ -33,7 +34,7 @@ async function resetDatabase() {
         console.log('  - Foreign key checks activados.');
 
         // Leer el archivo SQL de inicialización
-        const sqlPath = path.join(__dirname, '../bbdd/initData/banco_demo.sql');
+        const sqlPath = path.join(__dirname, '../bbdd/initData/01_banco_demo.sql');
         const sql = fs.readFileSync(sqlPath, 'utf8');
 
         // Ejecutar el script SQL
