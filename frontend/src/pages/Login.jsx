@@ -46,7 +46,7 @@ function Login() {
 
         <button
           type="submit"
-          className="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition duration-200"
+          className="w-full bg-red-900 text-white py-2 rounded-lg hover:bg-gray-800 transition duration-200"
         >
           Login
         </button>

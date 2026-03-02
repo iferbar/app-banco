@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 import Dashboard from './pages/Dashboard.jsx';
 import Login from './pages/Login.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
-import 'tailwindcss';
 import './index.css';
 
 const root = document.getElementById('root');
