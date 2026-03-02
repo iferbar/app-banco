@@ -179,11 +179,11 @@ Componente de login con interfaz moderna y segura.
 **Código clave:**
 
 ```javascript
-import { saveUser } from '../utils/auth'
+import { saveUser } from '../utils/auth';
 
 // Después de login exitoso:
-saveUser(data.data.usuario) // Guarda en localStorage
-navigate('/dashboard') // Redirige
+saveUser(data.data.usuario); // Guarda en localStorage
+navigate('/dashboard'); // Redirige
 ```
 
 **Endpoint consumido:**
@@ -213,16 +213,16 @@ Interfaz principal del usuario autenticado con 4 pestañas funcionales.
 **Código clave:**
 
 ```javascript
-import { getUser, clearUser } from '../utils/auth'
+import { getUser, clearUser } from '../utils/auth';
 
 // Al abrir el dashboard:
-const user = getUser() // Lee del localStorage
+const user = getUser(); // Lee del localStorage
 
 // Al hacer logout:
 const handleLogout = () => {
-  clearUser() // Limpia localStorage
-  navigate('/login') // Redirige
-}
+  clearUser(); // Limpia localStorage
+  navigate('/login'); // Redirige
+};
 ```
 
 **Pestaña 1: 📊 Mis Movimientos**
@@ -261,9 +261,9 @@ Formulario para hacer abonos a la cuenta.
 **Endpoint consumido:**
 
 ```javascript
-POST / api / movimientos / abono
+POST / api / movimientos / abono;
 Body: {
-  ;(id_usuario, importe, concepto)
+  (id_usuario, importe, concepto);
 }
 ```
 
@@ -288,9 +288,9 @@ Formulario para hacer retiradas de la cuenta.
 **Endpoint consumido:**
 
 ```javascript
-POST / api / movimientos / retirada
+POST / api / movimientos / retirada;
 Body: {
-  ;(id_usuario, importe, concepto)
+  (id_usuario, importe, concepto);
 }
 ```
 
@@ -319,9 +319,9 @@ Formulario para transferencias entre usuarios por teléfono.
 **Endpoint consumido:**
 
 ```javascript
-POST / api / movimientos / transferencia
+POST / api / movimientos / transferencia;
 Body: {
-  ;(id_usuario_origen, telefono_destino, importe, concepto)
+  (id_usuario_origen, telefono_destino, importe, concepto);
 }
 ```
 
@@ -340,13 +340,13 @@ HOC (Higher Order Component) que protege rutas requiriendo autenticación.
 **Código clave:**
 
 ```javascript
-import { isAuthenticated } from '../utils/auth'
+import { isAuthenticated } from '../utils/auth';
 
 function ProtectedRoute({ children }) {
   if (!isAuthenticated()) {
-    return <Navigate to="/login" replace />
+    return <Navigate to="/login" replace />;
   }
-  return children
+  return children;
 }
 ```
 
@@ -368,19 +368,19 @@ Archivo simple con 4 funciones para manejar localStorage.
 
 ```javascript
 // Guardar usuario después de login
-saveUser(user)
+saveUser(user);
 // Ejemplo: saveUser({ id_usuario: 1, username: 'juan', ... })
 
 // Obtener usuario actual
-getUser()
+getUser();
 // Retorna: { id_usuario, username, nombre, ... } o null
 
 // Eliminar usuario (logout)
-clearUser()
+clearUser();
 // Limpia todo el localStorage relacionado con auth
 
 // Verificar si está autenticado
-isAuthenticated()
+isAuthenticated();
 // Retorna: true o false
 ```
 
@@ -455,7 +455,7 @@ export default defineConfig({
       },
     },
   },
-})
+});
 ```
 
 **¿Qué hace esto?**
