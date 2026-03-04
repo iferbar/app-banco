@@ -1,7 +1,8 @@
 import { Navigate } from 'react-router';
 
 function ProtectedRoute(props) {
-  const isAuthenticated = false;
+  const isAuthenticated = true; //aqui deberas implementar tu logica de autenticacion
+
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
